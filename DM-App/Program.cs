@@ -18,8 +18,9 @@ namespace DM_App
             stopwatch.Start();
             
             // Populators
-            Populators.OrderPopulator.Populate();
-            Populators.PartyPopulator.Populate();
+            //Populators.OrderPopulator.Populate();
+            //Populators.PartyPopulator.Populate();
+            Populators.AddressPopulator.Populate();
 
             //Stop stopwatch
             stopwatch.Stop();

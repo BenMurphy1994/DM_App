@@ -64,6 +64,7 @@
     <Compile Include="OrderLine.cs" />
     <Compile Include="OrderLineExtension.cs" />
     <Compile Include="Party.cs" />
+    <Compile Include="Populators\AddressPopulator.cs" />
     <Compile Include="Populators\OrderPopulator.cs" />
     <Compile Include="Populators\PartyPopulator.cs" />
     <Compile Include="Price.cs" />

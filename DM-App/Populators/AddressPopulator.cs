@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DM_App.Populators
 {
-    class PartyPopulator
+    class AddressPopulator
     {
         public static void Populate()
         {
@@ -18,9 +17,9 @@ namespace DM_App.Populators
             {
                 using (var db = new DM_Model())
                 {
-                    var query = (from t1 in db.Parties
-                                 join t2 in db.Minings on t1.Order_Id equals t2.Order_Id
-                                 orderby t1.Order_Id
+                    var query = (from t1 in db.Addresses
+                                 join t2 in db.Minings on t1.Alias equals t2.PostalAddress_Id
+                                 orderby t2.Order_Id
                                  select t1).Skip(j).Take(chunkSize);
 
                     var results = query.ToList();
@@ -29,10 +28,14 @@ namespace DM_App.Populators
 
                     for (int i = 0; i < chunkSize; i++)
                     {
-                        Mining rowUpdate = miningRows.Single(x => x.Order_Id == results[i].Order_Id);
-                        rowUpdate.PartyIdentification = results[i].PartyIdentification;
-                        rowUpdate.PostalAddress_Id = results[i].PostalAddress_Id;
-                        Console.WriteLine($"Party table: {j}, {i}");
+                        Mining rowUpdate = miningRows.Single(x => x.PostalAddress_Id == results[i].Alias);
+
+                        rowUpdate.CityName = results[i].CityName;
+                        rowUpdate.Country = results[i].Country;
+                        rowUpdate.CountrySubentity = results[i].CountrySubentity;
+                        rowUpdate.PostalZone = results[i].PostalZone;
+
+                        Console.WriteLine($"Address table: {j}, {i}");
                     }
 
                     db.SaveChanges();

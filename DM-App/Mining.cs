@@ -23,6 +23,8 @@ namespace DM_App
         [StringLength(128)]
         public string PartyIdentification { get; set; }
 
+        public long? PostalAddress_Id { get; set; }
+
         [StringLength(500)]
         public string Product1 { get; set; }
 
