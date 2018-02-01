@@ -55,7 +55,7 @@
     <Compile Include="AllowanceCharge.cs" />
     <Compile Include="CustomerParty.cs" />
     <Compile Include="Delivery.cs" />
-    <Compile Include="DM-Model.cs" />
+    <Compile Include="DmModel.cs" />
     <Compile Include="LineItem.cs" />
     <Compile Include="Mining.cs" />
     <Compile Include="MonetaryTotal.cs" />
@@ -65,8 +65,14 @@
     <Compile Include="OrderLineExtension.cs" />
     <Compile Include="Party.cs" />
     <Compile Include="Populators\AddressPopulator.cs" />
+    <Compile Include="Populators\AllowanceChargePopulator.cs" />
+    <Compile Include="Populators\LineItemPopulator.cs" />
+    <Compile Include="Populators\MonetaryTotalPopulator.cs" />
+    <Compile Include="Populators\OrderLineExtensionPopulator.cs" />
+    <Compile Include="Populators\OrderLinePopulator.cs" />
     <Compile Include="Populators\OrderPopulator.cs" />
     <Compile Include="Populators\PartyPopulator.cs" />
+    <Compile Include="Populators\PricePopulator.cs" />
     <Compile Include="Price.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

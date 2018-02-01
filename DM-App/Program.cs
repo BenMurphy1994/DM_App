@@ -16,11 +16,25 @@ namespace DM_App
             //Start stopwatch
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            
+
             // Populators
             //Populators.OrderPopulator.Populate();
             //Populators.PartyPopulator.Populate();
-            Populators.AddressPopulator.Populate();
+            //Populators.AddressPopulator.Populate(); 
+
+            // Little bit janky: 
+            //Populators.OrderLinePopulator.Populate();
+
+            // This one's janky and takes 6m to run on it's own:
+            //Populators.AllowanceChargePopulator.Populate();
+
+            //TODO: Populators.LineItemPopulator.Populate();
+
+            //Populators.MonetaryTotalPopulator.Populate();
+
+            //TODO: Price_Id is null so the relationship isn't possible? 
+            //Populators.PricePopulator.Populate();
+            Populators.OrderLineExtensionPopulator.Populate();
 
             //Stop stopwatch
             stopwatch.Stop();

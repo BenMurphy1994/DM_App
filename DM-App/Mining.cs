@@ -73,5 +73,13 @@ namespace DM_App
 
         [StringLength(3)]
         public string DestinationCountryCode { get; set; }
+
+        public long? AnticipatedMonetaryTotal_Id { get; set; }
+
+        public long? Price_Id { get; set; }
+
+        public long? PartyAlias { get; set; }
+
+        public long? OrderLineAlias { get; set; }
     }
 }
